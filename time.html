@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>clock</title>
+    <style>
+      body{background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+;}
+h1{transition: all .5s ease;color:white;transform: translateX(0);}
+h1:hover{transform:translateX(-50px);}
+    </style>
+  </head>
+  <body>
+    <h1 class="text-white text-right p-4">00:00:00</h1>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+      function showTime(){
+      let date=new Date()
+      // console.log(date);
+      let hours=date.getHours()
+      let minutes=date.getMinutes()
+      let seconds=date.getSeconds();
+      let meridian=hours==0&&hours<12?'AM':'PM';
+      console.log(hours);
+      hours=hours>12?hours-12:hours;
+      hours=hours<10?'0'+hours:hours;
+      minutes=minutes<10?'0'+minutes:minutes;
+      seconds=seconds<10?'0'+seconds:seconds;
+      // console.log(hours,minutes,seconds);
+      let h1=document.querySelector('h1')
+      h1.textContent=`${hours}:${minutes}:${seconds} ${meridian}`
+      }
+      window.addEventListener('DOMContentLoaded',()=>{
+        setInterval(() => {
+          showTime()
+        }, 1000);
+      })
+    </script>
+  </body>
+</html>
