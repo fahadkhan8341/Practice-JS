@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: darkslategray;color:white;overflow-x: hidden;}
+        .posts{display: grid;grid-template-columns: repeat(4,1fr);width: 100vw;margin: 2rem auto;text-align: center;grid-gap:1.1rem;}
+        .posts .post{
+            padding:.1rem;box-shadow: -6px -6px 8px  rgba(255,255,255,0.5) ,6px 6px 9px rgba(0,0,0,0.4);transition: all .4s ease-in-out;transform: scale(1);
+        }
+        .posts .post:hover,.posts .post:active,.posts .post:focus{
+            box-shadow: inset -6px -6px 8px  rgba(255,255,255,0.5) , inset 6px 6px 9px rgba(0,0,0,0.4);transform: scale(.97);
+        }
+    </style>
+</head>
+<body>
+    <h1>MY BLOGs</h1>
+    <hr>
+    <section class="posts"></section>
+    <template class="post_template">
+        <div class="post">
+            <img src="" alt="" class="post_img">
+            <h4 class="post_title"></h4>
+            <p class="post_body"></p>
+        </div>
+    </template>
+
+    <script>
+        let postContainer=document.querySelector('.posts')
+        let postTemplate=document.querySelector('.post_template')
+
+        getPosts()
+
+        async function getPosts(){
+            const postStream= await fetch('https://jsonplaceholder.typicode.com/posts')
+            const posts= await postStream.json()
+            let i = 0;
+            console.log(posts);
+
+            posts.forEach(post=>{
+                i++;
+                if(i<50){
+                    const title= post.title;
+                    const body=post.body;
+
+                    fetch('https://source.unsplash.com/250x150/')
+                    .then(res=>res.blob())
+                    .then(blob=>{
+                    const newPost=document.importNode(postTemplate.content,true)
+                    const postTitle=newPost.querySelector('.post_title')
+                    const postBody=newPost.querySelector('.post_body')
+                    const postImg=newPost.querySelector('.post_img')
+                    postTitle.innerText=title;
+                    postBody.innerText=body;
+                    console.log(blob);
+                    postImg.src=URL.createObjectURL(blob)
+
+
+                    postContainer.appendChild(newPost)
+                    })
+
+                    
+                }
+
+            })
+        }
+    </script>
+</body>
+</html>
