@@ -1,0 +1,34 @@
+*{margin:0;padding:0;box-sizing: border-box;font-family:sans-serif;}
+body{overflow: hidden;}
+.slider{width:100vw;height: 100vh;position: relative;}
+.slide{width: 100vw;height: 100vh;position: absolute;top:0;left:0;opacity:0;transition: all .4s ease-in-out;}
+.slide:nth-child(1){background: url('./bat.jpg')center/cover no-repeat;}
+.slide:nth-child(2){background: url('./wood-3072434_1280.jpg')center/cover no-repeat;}
+.slide:nth-child(3){background: url('./rgb.jpg')center/cover no-repeat;}
+.slide:nth-child(4){background: url('./john.jpg')center/cover no-repeat;}
+#next{position: absolute;right:1rem;top:50%;font-size: 3rem;color:white;transform: translateY(-50%) scale(1);cursor: pointer;}
+#prev{position: absolute;left:1rem;top:50%;font-size: 3rem;color:white;transform: translateY(-50%) scale(1);cursor: pointer;}
+#next:hover,#prev:hover{transform: translateY(-50%) scale(1.3);transition: all .4s ease-in-out;}
+
+.slide-content{position: absolute;bottom: 2.5rem;background-color: #ccc;width: 30%;transform: translateX(-100%);left:0;opacity: 0;}
+.slide-content h2,.slide-content p{margin:1rem}
+
+.slide.current{opacity:1;animation:animateSlide  .5s ease;}
+.current .slide-content{animation:animateSlideContent .6s forwards ease;opacity: 1;}
+
+@keyframes animateSlide{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes animateSlideContent{
+    from{transform: translateX(-100%);}
+    to{transform: translateX(0);}
+}
+
+@media (max-width:500px){
+    .slide-content{bottom: 0;width:100%;transform: translateY(100%);}
+    @keyframes animateSlideContent{
+        from{transform:translateY(100%);}
+        to{transform: translateY(0);}
+    }
+}
