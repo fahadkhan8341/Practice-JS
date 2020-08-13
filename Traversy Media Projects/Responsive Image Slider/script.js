@@ -1,6 +1,7 @@
 const nextBtn=document.querySelector('#next')
 const prevBtn=document.querySelector('#prev')
 const sliders=document.querySelectorAll('.slide')
+let clrLoop;
 
 function nextSlide(){
     let current=document.querySelector('.current')
@@ -23,9 +24,20 @@ function prevSlide(){
 }
 
 nextBtn.addEventListener('click',e=>{
+    clearInterval(clrLoop)
     nextSlide()
+    slideLoop()
 })
 
 prevBtn.addEventListener('click',e=>{
+    clearInterval(clrLoop)
     prevSlide()
+    slideLoop()
 })
+
+function slideLoop(){
+    clrLoop= setInterval(() => {
+        nextSlide()
+    }, 8000);
+}
+slideLoop()
