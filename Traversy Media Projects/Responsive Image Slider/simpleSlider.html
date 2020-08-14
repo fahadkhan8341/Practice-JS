@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img class="slider" style="width: 300px;height: 200px;display: block;margin:0 auto" alt="">
+    <script>
+        const slider=document.querySelector('.slider')
+        let time=3000;
+        let i=0;
+        let images=['bat.jpg','john.jpg','rgb.jpg','wood.jpg']
+
+        function runSlider(){
+            slider.src=images[i]
+            if(i<images.length-1){
+                i++
+            } else{
+                i=0
+            }
+            setTimeout(runSlider,time)
+        }
+        window.onload=runSlider
+    </script>
+</body>
+</html>
