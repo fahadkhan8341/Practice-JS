@@ -1,4 +1,7 @@
 body{background-color: coral;}
 .container{margin:0 auto;display: flex;justify-content: center;}
-.container .empty{margin:2rem 1.2rem;width: 160px;height: 160px;background-color: white;border:3px solid salmon}
-.fill{background: url('https://source.unsplash.com/random/150x150');width: 150px;height: 150px;}
+.container .empty{margin:2rem 1.2rem;width: 160px;height: 160px;background-color: white;border:5px solid goldenrod}
+.fill{background: url('https://source.unsplash.com/random/150x150');width:160px;height: 160px;cursor: pointer;}
+.hold{border:5px solid #ccc}
+.invisible{display: none;}
+.hovered{border-style: dashed !important;background-color: #ccc !important;}
