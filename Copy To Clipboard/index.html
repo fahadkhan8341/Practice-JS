@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Copy to Clipboard</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+    textarea{height: 35vh !important;}
+    textarea[readonly]{background-color: #ccc !important;}
+    .btn-group{display: flex;}
+    .btn-group button{flex:1;font-size: 1.2rem}
+    .copy{position: relative !important;}
+    .copy button{position: absolute;right: 1rem;top:1rem;}
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <header class="bg-secondary p-2 mb-3">
+        <h1 class="text-center">Convert any Text to Array</h1>
+    </header>
+    <div class="container">
+        <textarea class="form-control form-control-large" id="inputArea"></textarea>
+        <div class="btn-group my-3">
+            <button class="btn btn-info btn-large mr-2" id="convert" >Convert Text to Array</button>
+            <button class="btn btn-large btn-info ml-2" id="clear">Clear All</button>
+        </div>
+        <div class="copy">
+            <textarea class="form-control form-control-large" id="outputArea" readonly></textarea>
+            <button class="btn btn-secondary" id="copy">Copy</button>
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
