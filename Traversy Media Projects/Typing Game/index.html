@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,43 @@
     <title>Typing Master</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <style>
-    .currentText{font-size: 4rem}
-    input{font-size: 1.2rem !important;text-align: center;}
+        .currentText {
+            font-size: 4rem
+        }
+
+        input {
+            font-size: 1.2rem !important;
+            text-align: center;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0)
+            }
+
+            20% {
+                transform: translateX(50px)
+            }
+
+            40% {
+                transform: translateX(-50px)
+            }
+
+            60% {
+                transform: translateX(25px)
+            }
+
+            80% {
+                transform: translateX(-25px)
+            }
+
+            100% {
+                transform: translateX(0)
+            }
+        }
     </style>
 </head>
+
 <body class="bg-dark text-white">
     <header class="bg-secondary">
         <h1 class="text-center py-4">Typing Master</h1>
@@ -20,25 +54,27 @@
             <div class="col-md-6 mx-auto">
                 <p class="text-center my-3">Type the word given below in 5 secs</p>
                 <h2 class="text-center my-5 currentText"></h2>
-                <input type="text" class="form-control form-control-large input" placeholder=" Start Typing to Start the game..."     autofocus>
+                <input type="text" class="form-control form-control-large input"
+                    placeholder=" Start Typing to Start the game..." autofocus>
                 <div class="row my-3">
                     <div class="dataLeft col-md-6">
                         <h5 class="match">... </h5>
                         <h5>Highscore: <span class="highScore"></span></h5>
                     </div>
-                        <div class="dataRight col-md-6 " >
-                                <h5>Time Left: <span  class="timeLeft"></span> </h5>
-                                <h5>Score: <span  class="score">0</span></h5>
-                            </div>
+                    <div class="dataRight col-md-6 ">
+                        <h5>Time Left: <span class="timeLeft"></span> </h5>
+                        <h5>Score: <span class="score">0</span></h5>
+                    </div>
                 </div>
-                
+
                 <div class="instructions bg-secondary text-center p-4 rounded">
                     <h4 class="text-center"><b>Instructions:</b></h4>
-                    Type the given words within the time limit and press Enter to continue 
+                    Type the given words within the time limit and press Enter to continue
                 </div>
             </div>
         </div>
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>
