@@ -1,32 +1,45 @@
 document.querySelector('#form').addEventListener('submit', saveBookmark)
 window.addEventListener('DOMContentLoaded', showBookmarks)
+let nameRegex = /^[a-zA-Z0-9_.-]*$/;
+let urlRegex = /^(([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]|[a-zA-Z0-9])\.)*[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$/
 
 function saveBookmark(e) {
     let name = document.querySelector('.name').value;
     let url = document.querySelector('.url').value;
     let https = document.querySelector('#https').textContent
-    url = https + url;
+
 
     // name=name.toUpperCase()
+    if (!nameRegex.test(name) || !urlRegex.test(url)) {
+        showMsg('Please Enter the valid name and URL', 'danger')
 
-    let bookmark = { name, url }
-
-    if (localStorage.getItem('bookmarks') === null) {
-        let bookmarks = []
-        bookmarks.push(bookmark)
-        localStorage.setItem('bookmarks', JSON.stringify(bookmarks))
     } else {
-        let bookmarks = JSON.parse(localStorage.getItem('bookmarks'))
+        url = https + url;
+        let bookmark = { name, url }
 
+        if (localStorage.getItem('bookmarks') === null) {
+            let bookmarks = []
+            bookmarks.push(bookmark)
+            localStorage.setItem('bookmarks', JSON.stringify(bookmarks))
+            showMsg('Bookmark successfully added below', 'success')
+        } else {
+            let bookmarks = validateUrl(url)
+            if (bookmarks) {
+                bookmarks.push(bookmark)
+                localStorage.setItem('bookmarks', JSON.stringify(bookmarks))
+                showMsg('Bookmark successfully added below', 'success')
 
-        bookmarks.push(bookmark)
-        localStorage.setItem('bookmarks', JSON.stringify(bookmarks))
-        console.log(bookmarks)
-        showBookmarks()
-        document.querySelector('#form').reset()
+            } else {
+                showMsg('This bookmark URL already exists.', 'danger')
+            }
+
+            console.log(bookmarks)
+        }
 
     }
 
+    showBookmarks()
+    document.querySelector('#form').reset()
     e.preventDefault()
 }
 
@@ -53,20 +66,35 @@ function removeBookmark(url) {
     let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
     for (i = 0; i < bookmarks.length; i++) {
         if (bookmarks[i].url === url) {
-            bookmarks.splice(i, 1)
+            if (confirm('Do you really want to remove this bookmark?')) {
+                bookmarks.splice(i, 1)
+            } else {
+                return
+            }
         }
     }
+    showMsg('Bookmark removed successfully.', 'warning')
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks))
     showBookmarks()
 }
 
 
-function showErrorMsg() {
-    let msg = `<div class="alert alert-danger" role="alert">
-    This bookmark URL already exists below.
+function showMsg(message, className) {
+    let msg = `<div class="alert alert-${className}" role="alert">
+    ${message}
   </div>`;
-    let errorContainer = document.querySelector('.errMsg');
+    let errorContainer = document.querySelector('.msg');
     errorContainer.innerHTML = msg
     setTimeout(() => errorContainer.innerHTML = '', 3000)
 }
 
+function validateUrl(url) {
+    let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    for (i = 0; i < bookmarks.length; i++) {
+        if (bookmarks[i].url === url) {
+
+            return false
+        }
+    }
+    return bookmarks
+}
