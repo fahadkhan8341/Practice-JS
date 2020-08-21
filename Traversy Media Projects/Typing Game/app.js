@@ -7,6 +7,8 @@ const scoreContainer = document.querySelector('.score')
 const timeLeftContainer = document.querySelector('.timeLeft')
 const highScoreContainer = document.querySelector('.highScore')
 const match = document.querySelector('.match')
+const audios = document.querySelectorAll('audio')
+
 let score = 0;
 let timeLeft = 5;
 let lastIndex;
@@ -48,8 +50,12 @@ function startGame(e) {
             updateScore()
             inputField.value = ''
             match.innerHTML = showMatch('success', 'Correct Match')
+            audios[0].currentTime = 0;
+            audios[0].play()
         } else {
             match.innerHTML = showMatch('warning', 'Wrong Match')
+            audios[1].currentTime = 0;
+            audios[1].play()
         }
     }
 }
@@ -67,6 +73,7 @@ function startTimer() {
         score = 0;
         match.innerHTML = showMatch('danger', 'Game Over')
         container.style.animation = "shake .7s forwards ease-out"
+        audios[2].play()
     }
     timeLeftContainer.innerHTML = timeLeft;
     timeLeft--;
