@@ -8,18 +8,27 @@ const timeLeftContainer = document.querySelector('.timeLeft')
 const highScoreContainer = document.querySelector('.highScore')
 const match = document.querySelector('.match')
 const audios = document.querySelectorAll('audio')
+const levels = document.querySelectorAll('.levels')
 
 let score = 0;
 let timeLeft = 5;
 let lastIndex;
 let timer;
 let highScore = 0;
+let gameLevel = 5;
 
 window.addEventListener('load', init)
 inputField.addEventListener('keyup', startGame)
 window.addEventListener('load', () => {
     highScore = localStorage.getItem('highScore')
     highScoreContainer.innerHTML = highScore
+    levels[0].value = '5'
+})
+
+levels.forEach(level => {
+    level.addEventListener('change', () => {
+        gameLevel = level.value;
+    })
 })
 
 
@@ -40,9 +49,10 @@ function random() {
 
 function startGame(e) {
     if (e.keyCode === 13) {
+        inputField.value = inputField.value.toLowerCase()
         if (inputField.value === currentWord.innerHTML) {
             clearInterval(timer)
-            timeLeft = 5
+            timeLeft = gameLevel;
             container.style.animation = '';
             startTimer()
             timer = setInterval(startTimer, 1000)

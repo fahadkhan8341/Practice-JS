@@ -49,13 +49,17 @@ function showBookmarks() {
     let output = '';
 
     for (bookmark of bookmarks) {
-        output += `<div class="alert alert-secondary d-flex mx-5" role="alert">
-        <div class="data">
+        output += `<div class="alert alert-secondary mx-1 mx-sm-3 mx-md-5" role="alert">
+        <div class="row">
+        <div class="data col-12 col-sm-8">
         <p>${bookmark.name}</p>
         <p class="lead text-info">${bookmark.url}</p></div>
-        <div class="group ml-auto my-auto">
-            <a class="btn btn-sm btn-outline-info" href="${bookmark.url}" target="_blank">Visit</a>
-            <a onclick="removeBookmark('${bookmark.url}')" class="btn btn-sm btn-outline-danger">Remove</a>
+        <div class="group col-12 col-sm-4 mx-auto ml-sm-auto my-auto">
+        <div style="display:flex;justify-content:flex-end;align-items:center">
+            <a class="btn btn-sm btn-outline-info m-1" href="${bookmark.url}" target="_blank">Visit</a>
+            <a onclick="removeBookmark('${bookmark.url}')" class="btn btn-sm btn-outline-danger m-1 ">Remove</a>
+            </div>
+        </div>
         </div>
     </div>`;
     }

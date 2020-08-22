@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <title>Reckon Kit</title>
+</head>
+
+<body class="bg-dark">
+  <div class="container mt-5  p-lg-3">
+    <header>
+      <h1 class="text-light">RECON KIT</h1>
+      <img src="img/dashboard.svg" alt="">
+    </header>
+    <div class="row mt-3">
+      <div class=" col-12 col-sm-3 ">
+        <div class="nav flex-column nav-pills shadow-lg rounded" id="v-pills-tab" role="tablist"
+          aria-orientation="vertical">
+          <a class="nav-link active text-light" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+            aria-controls="v-pills-home" aria-selected="true">ADD TARGET</a>
+          <a class="nav-link text-light" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+            aria-controls="v-pills-profile" aria-selected="false">SCAN RESULTS</a>
+
+        </div>
+      </div>
+      <div class="col-12 col-sm-9 mt-4 mt-sm-2 mt-md-1">
+        <div class="tab-content p-1 p-sm-2 p-lg-5 shadow-lg rounded " id="v-pills-tabContent">
+          <div class="tab-pane fade show  active  " id="v-pills-home" role="tabpanel"
+            aria-labelledby="v-pills-home-tab">
+            <h3 class="text-center text-light">Add Target Page</h3>
+            <form class="mt-4">
+              <div class="form-group">
+                <label for="basic-url" class=" text-white">Enter Domain to Scan:</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">https://</span>
+                  </div>
+                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                    placeholder=" google.com">
+                </div>
+
+              </div>
+              <p class="font-italic text-center text-light mt-5">Type Of Scan - Select Type Of Scan</p>
+              <div class="btn-container d-block ">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn  active">
+                    <input type="radio" name="options" id="option1" checked> Full Scan
+                  </label>
+                  <label class="btn ">
+                    <input type="radio" name="options" id="option2">Ports Scan
+                  </label>
+                  <label class="btn ">
+                    <input type="radio" name="options" id="option3">Screenshot Scan
+                  </label>
+                </div>
+                <button type="submit" class="btn text-white mx-auto mt-4 start">Start</button>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
