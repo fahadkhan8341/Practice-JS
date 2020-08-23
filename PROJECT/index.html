@@ -14,11 +14,11 @@
   <title>Reckon Kit</title>
 </head>
 
-<body class="bg-dark">
+<body>
   <div class="container mt-5  p-lg-3">
     <header>
       <h1 class="text-light">RECON KIT</h1>
-      <img src="img/dashboard.svg" alt="">
+      <a href=""><img src="img/dashboard.svg" alt=""></a>
     </header>
     <div class="row mt-3">
       <div class=" col-12 col-sm-3 ">
@@ -51,21 +51,75 @@
               <p class="font-italic text-center text-light mt-5">Type Of Scan - Select Type Of Scan</p>
               <div class="btn-container d-block ">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <label class="btn  active">
-                    <input type="radio" name="options" id="option1" checked> Full Scan
+                  <label class="btn  active" for="options">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Full Scan
                   </label>
-                  <label class="btn ">
-                    <input type="radio" name="options" id="option2">Ports Scan
+                  <label class="btn" for="options">
+                    <input type="radio" name="options" id="option2" autocomplete="off">Ports Scan
                   </label>
-                  <label class="btn ">
-                    <input type="radio" name="options" id="option3">Screenshot Scan
+                  <label class="btn" for="options">
+                    <input type="radio" name="options" id="option3" autocomplete="off">Screenshot Scan
                   </label>
                 </div>
                 <button type="submit" class="btn text-white mx-auto mt-4 start">Start</button>
               </div>
             </form>
           </div>
-          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...
+          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <h3 class="text-center text-light">Scan Results</h3>
+            <div class="results mt-5">
+
+              <div class="alert alert-dark border-secondary shadow-lg" role="alert">
+                <div class="data">
+                  <h5 class="text-white"><em>https://google.com</em></h5>
+                  <small>Thu Aug 20 2020 00:54:11 GMT+0530 (India Standard Time)</small></p>
+                  <h6><span class="text-white"><b>Type</b></span>: Full Scan</h6>
+                </div>
+                <div class="status">
+                  <h5><span class="badge badge-success">Success</span></h5>
+                </div>
+              </div>
+              <div class="alert alert-dark border-secondary shadow-lg" role="alert">
+                <div class="data">
+                  <h5 class="text-white"><em>https://facebook.com</em></h5>
+                  <small>Thu Aug 20 2020 00:54:11 GMT+0530 (India Standard Time)</small></p>
+                  <h6><span class="text-white"><b>Type</b></span>: Full Scan</h6>
+                </div>
+                <div class="status">
+                  <h5><span class="badge badge-secondary">Scanning</span></h5>
+                </div>
+              </div>
+              <div class="alert alert-dark border-secondary shadow-lg" role="alert">
+                <div class="data">
+                  <h5 class="text-white"><em>https://quora.com</em></h5>
+                  <small>Thu Aug 20 2020 00:54:11 GMT+0530 (India Standard Time)</small></p>
+                  <h6><span class="text-white"><b>Type</b></span>: Screenshot Scan</h6>
+                </div>
+                <div class="status">
+                  <h5><span class="badge badge-secondary">Scanning</span></h5>
+                </div>
+              </div>
+              <div class="alert alert-dark border-secondary shadow-lg" role="alert">
+                <div class="data">
+                  <h5 class="text-white"><em>https://flipkart.com</em></h5>
+                  <small>Thu Aug 20 2020 00:54:11 GMT+0530 (India Standard Time)</small></p>
+                  <h6><span class="text-white"><b>Type</b></span>: Ports Scan</h6>
+                </div>
+                <div class="status">
+                  <h5><span class="badge badge-success">Success</span></h5>
+                </div>
+              </div>
+              <div class="alert alert-dark border-secondary shadow-lg" role="alert">
+                <div class="data">
+                  <h5 class="text-white"><em>https://twitter.com</em></h5>
+                  <small>Thu Aug 20 2020 00:54:11 GMT+0530 (India Standard Time)</small></p>
+                  <h6><span class="text-white"><b>Type</b></span>: Full Scan</h6>
+                </div>
+                <div class="status">
+                  <h5><span class="badge badge-success">Success</span></h5>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
