@@ -20,9 +20,12 @@ header img:hover{transform: scale(.95)}
 .data{flex:2}
 .status{flex:1;}
 .status{display: flex;justify-content: center;align-items: center;}
-.data h5{color:#11f088 !important}
-.data h6{color:#049953 !important}
-
+h5{color:#11f088 !important}
+h6,table a{color:#049953 !important}
+.accordion .card{background-color: transparent !important;}
+.accordion .card button{text-decoration-color: #11f088;}
+table {background-color: transparent !important;}
+table img{width:150px;height: 100px;}
 @media (max-width:450px){
     .results div{text-align: center;}
     .results .alert{flex-direction: column;}

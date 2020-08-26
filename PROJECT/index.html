@@ -28,12 +28,13 @@
             aria-controls="v-pills-home" aria-selected="true">ADD TARGET</a>
           <a class="nav-link text-light" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
             aria-controls="v-pills-profile" aria-selected="false">SCAN RESULTS</a>
-
+          <a class="nav-link text-light" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profiles" role="tab"
+            aria-controls="v-pills-profile" aria-selected="false">FINAL RESULTS</a>
         </div>
       </div>
       <div class="col-12 col-sm-9 mt-4 mt-sm-2 mt-md-1">
-        <div class="tab-content p-1 p-sm-2 p-lg-5 shadow-lg rounded " id="v-pills-tabContent">
-          <div class="tab-pane fade show  active  " id="v-pills-home" role="tabpanel"
+        <div class="tab-content shadow-lg rounded " id="v-pills-tabContent">
+          <div class="tab-pane fade show  active  p-1 p-sm-2 p-lg-5" id="v-pills-home" role="tabpanel"
             aria-labelledby="v-pills-home-tab">
             <h3 class="text-center text-light">Add Target Page</h3>
             <form class="mt-4">
@@ -65,7 +66,8 @@
               </div>
             </form>
           </div>
-          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <div class="tab-pane fade p-1 p-sm-2 p-lg-5" id="v-pills-profile" role="tabpanel"
+            aria-labelledby="v-pills-profile-tab">
             <h3 class="text-center text-light">Scan Results</h3>
             <div class="results mt-5">
 
@@ -121,7 +123,104 @@
               </div>
             </div>
           </div>
+          <div class="tab-pane fade p-1 p-lg-2" id="v-pills-profiles" role="tabpanel"
+            aria-labelledby="v-pills-profile-tab">
+            <h3 class="text-center text-light">Final Results</h3>
+            <div class="accordion shadow-lg " id="accordionExample">
+              <div class="card rounded">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                      data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <h5><em>https://google.com</em></h5>
+                    </button>
+                  </h2>
+                </div>
 
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                  data-parent="#accordionExample">
+                  <div class="card-body">
+                    <table class="table table-hover table-dark rounded">
+                      <thead>
+                        <tr>
+                          <th scope=" col">#</th>
+                          <th scope="col">Sub Domain</th>
+                          <th scope="col">Screenshot</th>
+                          <th scope="col">Ports</th>
+                          <th scope="col">JS Files</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>
+                            <h6><a href="">https://store.google.com</a></h6>
+                          </td>
+                          <td><a href=""><img src="img/thumnail-1.jpg" class="img-thumbnail" alt=""></a></td>
+                          <td><span class="badge badge-pill badge-primary">8008</span>
+                            <span class="badge badge-pill badge-primary">443</span>
+                            <span class="badge badge-pill badge-primary">80</span></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>
+                            <h6><a href="">https://blog.google.com</a></h6>
+                          </td>
+                          <td><a href=""><img src="img/thumbnail-2.jpg" class="img-thumbnail" alt=""></a></td>
+                          <td><span class="badge badge-pill badge-primary">8008</span></td>
+                          <td></td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <h5><em>https://facebook.com</em></h5>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                    labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <h5><em>https://yahoo.com</em></h5>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                    labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
