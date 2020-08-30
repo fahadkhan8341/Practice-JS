@@ -21,11 +21,15 @@ header img:hover{transform: scale(.95)}
 .status{flex:1;}
 .status{display: flex;justify-content: center;align-items: center;}
 h5{color:#11f088 !important}
-h6,table a{color:#049953 !important}
+h6,table a,p em{color:#049953 !important}
 .accordion .card{background-color: transparent !important;}
-.accordion .card button{text-decoration-color: #11f088;}
+.accordion .card button{text-decoration-color: #11f088;color: #11f088;font-size: 1rem;text-transform: uppercase;}
 table {background-color: transparent !important;}
-table img{width:150px;height: 100px;}
+.accordion img{width:150px;height: 100px;}
+#collapseThree p {margin-bottom: 0.5rem;}
+#collapseThree p a,h6 a{color:#01b662;text-decoration-color: #01b662;}
+h6 a:hover,#collapseThree p a:hover {color:#049953; text-decoration-color: #049953;}
+.scan-info h5 em{border: 1px dashed #11f088;text-align: center;padding:0.3rem 0.5rem;}
 @media (max-width:450px){
     .results div{text-align: center;}
     .results .alert{flex-direction: column;}
