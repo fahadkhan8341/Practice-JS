@@ -1,0 +1,7 @@
+* {margin:0;padding:0;box-sizing: border-box;}
+body{background-color: #333;min-height: 100vh;display: flex;justify-content: center;align-items: center;}
+.piano {display: flex;border:10px solid black;border-radius:10px;}
+.white{background-color: white;height: 350px;width:70px;border:1px solid #333;}
+.black{height: 200px;width: 40px;background-color: black;margin-left: -20px;margin-right: -20px;z-index: 2;}
+.whiteActive {background-color: #ccc;}
+.blackActive {background-color: rgb(37, 37, 37);}
