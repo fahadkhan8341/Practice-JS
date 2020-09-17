@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="tabs">
+        <ul>
+            <li data-tab-target="#home">Home</li>
+            <li data-tab-target="#about">About</li>
+            <li data-tab-target="#services">Services</li>
+        </ul>
+        <div class="tab-contents">
+            <div id="home" data-tab-content class="active">
+                <h2>This is Homepage</h2>
+                <p>blah blahs blah</p>
+            </div>
+            <div id="about" data-tab-content>
+                <h2>About page for you </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, consequuntur. Repellat atque nisi
+                    modi perferendis repellendus fugiat illum eum dicta reprehenderit laboriosam. Accusamus ab quisquam
+                    dolore adipisci vero eaque dolor.</p>
+            </div>
+            <div id="services" data-tab-content>
+                <h2>Services is here</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae sed officiis, facere quas vitae odit!
+                    Voluptatum, deleniti error magnam itaque sit aspernatur.</p>
+            </div>
+        </div>
+    </div>
+    <script defer src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashton Wood Exercise Library</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="container">
+        <section class="main-page">
+          <div class="bg-overlay">
+            <img :src="heroImgSrc" id="heroImg">
+          </div>
+          <div class="main-page-data">
+            <div class="search">
+              <button class="search-input">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19.71 18.29l-3.11-3.11a7 7 0 1 0-1.41 1.42l3.11 3.11a1 1 0 0 0 1.41-1.42zM6 11a5 5 0 1 1 5 5 5 5 0 0 1-5-5z" fill="#ccc"></path>
+                </svg>
+              </button>
+              <span>82 videos</span>
+            </div>
+            <div class="logo">
+              <img src="https://i.vimeocdn.com/album_custom_logo/161895.png" alt="Ashton Wood Exercise Library" />
+            </div>
+            <div class="title">
+              <h1>
+                Ashton Wood Exercise Library
+              </h1>
+              <button @click="videoControl(true)" class="startBtn">
+                <svg viewBox="0 0 20 20" style="height: 1.125rem; width: 1.125rem; margin-right: 0.25rem;">
+                  <path d="M4 18a1 1 0 0 1-1-1V3a1 1 0 0 1 1.5-.86l12 7a1 1 0 0 1 0 1.72l-12 7A1 1 0 0 1 4 18zM5 4.74v10.52L14 10z" fill="#1a2e3b"></path>
+                </svg>
+                <span>Start watching</span>
+              </button>
+            </div>
+            <div v-if="showVideo" class="video-container">
+              <iframe scrolling="no" allowfullscreen="" allow="autoplay" src="https://vimeo.com/showcase/7381323/video/429561257/embed?autoplay=0" title="Alternating Dumbbell Shoulder Press"></iframe>
+              <img src="icons/x.svg" @click="videoControl(false)" alt="" id="closeBtn" />
+              <img src="icons/chevron-left.svg" alt="" id="prevBtn" />
+              <img src="icons/chevron-right.svg" alt="" id="nextBtn" />
+            </div>
+          </div>
+        </section>
+        <section class="gallery">
+          <div v-for="(thumbnail, index) in list" :key="index" class="thumbnail-container">
+            <div class="thumbnail" @click="changeImg(thumbnail.src)">
+              <div>
+                <img :src="thumbnail.src" :alt="thumbnail.title" :srcset="thumbnail.srcset" />
+                <div class="title">
+                  <p>{{ thumbnail.title }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
+
