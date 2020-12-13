@@ -3,6 +3,8 @@ const dragableBoxContainer = document.querySelector('.dragable-box-container')
 const scoreContainer = document.querySelector('.score')
 const title = document.querySelector('.title')
 const resetBtn=document.querySelector('.reset')
+const correctSound =  document.getElementById('correct');
+const wrongSound = document.getElementById('wrong')
 const colors = ['#f08080', '#90ee90', '#20b2aa', '#ffb6c1', '#87cefa'];
 let numbers = [];
 let newBox = document.createElement('div');
@@ -19,9 +21,11 @@ newBox.addEventListener('dragstart', dragStart)
 newBox.addEventListener('dragend', dragEnd)
 
 resetBtn.addEventListener('click',()=>{
+    if(confirm("Press 'OK' if you want to reset the score ?")) {
     score=0;
     scoreContainer.textContent=0
     localStorage.removeItem('score')
+    }
 })
 
 for (box of boxes) {
@@ -93,11 +97,15 @@ function updateScore(currentBox) {
     if (currentBox == userBox) {
         score++;
         scoreContainer.textContent = score;
-        localStorage.setItem('score', score)
+        localStorage.setItem('score', score);
+        correctSound.currentTime = 0;
+        correctSound.play()
     } else {
         score--;
         scoreContainer.textContent = score;
-        localStorage.setItem('score', score)
+        localStorage.setItem('score', score);
+        wrongSound.currentTime = 0;
+        wrongSound.play()
     }
 }
 console.log(random)
